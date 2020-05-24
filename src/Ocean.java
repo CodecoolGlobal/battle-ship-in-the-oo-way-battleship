@@ -10,9 +10,8 @@ public class Ocean{
     private List<Ship> ships;
 
 
-    public Ocean(List<List<Square>> squares, List<Ship> ships) {
-            this.squares = squares;
-            this.ships = ships;        
+    public Ocean() {
+            CreateEmptyBoard();     
         }
 
     private List<Square> CreateRow(){
@@ -24,9 +23,20 @@ public class Ocean{
         return Row;
         }
     
+        public List <List <Square>> CreateEmptyBoard(){
+            List<List<Square>> Board = new ArrayList<List<Square>>(); 
+            for( int i=0; i<WIDTH; i++){
+                List<Square> row =CreateRow();
+                Board.add(row);
+            }
+        return Board;
+        }
+    
+
     @Override
     public String toString() {
-        return"";
+
+        return  ;
     }
 
 

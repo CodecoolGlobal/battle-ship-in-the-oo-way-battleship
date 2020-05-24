@@ -1,7 +1,6 @@
 public class Square {
 
     private final static String SYMBOL = "X";
-
     private boolean isHit;
 
 

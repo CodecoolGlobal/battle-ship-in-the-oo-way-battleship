@@ -10,6 +10,7 @@ public class Ship {
         this.squares = squares;
     }
 
+
     @Override
     public String toString(){
         return "";
