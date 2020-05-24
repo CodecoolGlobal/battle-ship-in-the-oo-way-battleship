@@ -11,7 +11,7 @@ public class Ocean{
 
 
     public Ocean() {
-            CreateEmptyBoard();     
+            squares = CreateEmptyBoard();     
         }
 
     private List<Square> CreateRow(){
@@ -19,13 +19,13 @@ public class Ocean{
         for( int i=0; i<WIDTH; i++){
             Square square = new Square();
             Row.add(square);
-        }
+            }
         return Row;
         }
     
         public List <List <Square>> CreateEmptyBoard(){
             List<List<Square>> Board = new ArrayList<List<Square>>(); 
-            for( int i=0; i<WIDTH; i++){
+            for( int i=0; i<WEIGHT; i++){
                 List<Square> row =CreateRow();
                 Board.add(row);
             }
@@ -35,8 +35,17 @@ public class Ocean{
 
     @Override
     public String toString() {
-
-        return  ;
+        String playingboard = "";
+        for(List<Square> row : squares){
+            playingboard += "=====================\n";
+            for(Square square : row){
+                String element = String.valueOf(square);
+                playingboard +="|" + element;
+            }
+            playingboard += "|\n";
+        }
+        playingboard += "=====================\n";
+        return playingboard;
     }
 
 
