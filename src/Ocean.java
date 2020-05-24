@@ -47,6 +47,4 @@ public class Ocean{
         playingboard += "=====================\n";
         return playingboard;
     }
-
-
     }
