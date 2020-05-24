@@ -4,6 +4,7 @@ public class Square {
 
     private boolean isHit;
 
+
     public void hit() {
         isHit = true;
     }
