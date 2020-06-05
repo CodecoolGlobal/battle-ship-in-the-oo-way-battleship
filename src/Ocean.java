@@ -7,17 +7,17 @@ public class Ocean{
     private static final int WEIGHT = 10;
 
     private List<List<Square>> squares;
-    private List<Ship> ships;
+    // private List<Ship> ships;
 
 
     public Ocean() {
             squares = CreateEmptyBoard();     
         }
 
-    private List<Square> CreateRow(){
+    private List<Square> CreateRow(int y){
         List<Square> Row = new ArrayList<Square>();
-        for( int i=0; i<WIDTH; i++){
-            Square square = new Square();
+        for( int x=0; x<WIDTH; x++){
+            Square square = new Square(x, y);
             Row.add(square);
             }
         return Row;
@@ -25,8 +25,8 @@ public class Ocean{
     
         public List <List <Square>> CreateEmptyBoard(){
             List<List<Square>> Board = new ArrayList<List<Square>>(); 
-            for( int i=0; i<WEIGHT; i++){
-                List<Square> row =CreateRow();
+            for( int y=0; y<WEIGHT; y++){
+                List<Square> row =CreateRow(y);
                 Board.add(row);
             }
         return Board;
@@ -39,8 +39,8 @@ public class Ocean{
         for(List<Square> row : squares){
             playingboard += "=====================\n";
             for(Square square : row){
-                String element = String.valueOf(square);
-                playingboard +="|" + element;
+                int [] element = square.getXY();            
+                playingboard +="|" + element[0] + element[1];
             }
             playingboard += "|\n";
         }

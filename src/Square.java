@@ -2,6 +2,7 @@ public class Square {
     private String state;
     private int x;
     private int y;
+    
     public Square(int x, int y){
         this.state = "ocean";
         this.x = y;

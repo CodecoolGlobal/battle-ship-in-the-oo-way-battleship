@@ -57,3 +57,4 @@ public class Ship {
         }
         return isHit;
     }
+}
