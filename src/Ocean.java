@@ -7,7 +7,7 @@ public class Ocean{
     private static final int WEIGHT = 10;
 
     private List<List<Square>> squares;
-    // private List<Ship> ships;
+    private List<Ship> ships;
 
 
     public Ocean() {
@@ -32,6 +32,20 @@ public class Ocean{
         return Board;
         }
     
+    public List<Ship> CreateFleet(){
+        List<Ship> ships = new ArrayList<Ship>();
+        Ship Destroyer = new Ship(2,squares);
+        ships.add(Destroyer);
+        Ship Submarine = new Ship(3,squares);
+        ships.add(Submarine);
+        Ship Cruiser = new Ship(3,squares);
+        ships.add(Cruiser);
+        Ship Battleship = new Ship(4,squares);
+        ships.add(Battleship);
+        Ship Carrier = new Ship(5,squares);
+        ships.add(Carrier);
+        return ships;
+    }
 
     @Override
     public String toString() {
